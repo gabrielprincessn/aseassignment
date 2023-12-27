@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission Result</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="result-container">
+        <h2>Form Submission Result</h2>
+        <p><strong>Name:</strong> <span id="result-name"></span></p>
+        <p><strong>Email:</strong> <span id="result-email"></span></p>
+        <p><strong>Password:</strong> <span id="result-password"></span></p>
+    </div>
+
+    <script>
+        // Extract values from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const email = urlParams.get('email');
+        const password = urlParams.get('password');
+
+        // Display the entered values on the result page
+        document.getElementById('result-name').textContent = name;
+        document.getElementById('result-email').textContent = email;
+        document.getElementById('result-password').textContent = password;
+    </script>
+</body>
+</html>
